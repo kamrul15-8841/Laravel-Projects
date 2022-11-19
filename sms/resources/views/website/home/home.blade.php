@@ -6,6 +6,40 @@
 
 @section('body')
 
+{{--    notice section--}}
+    <div class="carousel" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card card-body">
+                    <h3 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, blanditiis commodi consequatur, doloremque est harum incidunt ipsum laboriosam magni officia omnis,
+                        qui quis recusandae soluta temporibus ut voluptas! Voluptas!</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, blanditiis commodi consequatur, doloremque est harum incidunt ipsum laboriosam magni officia omnis,
+                        qui quis recusandae soluta temporibus ut voluptas! Voluptas!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card card-body">
+                    <h3 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, blanditiis commodi consequatur, doloremque est harum incidunt ipsum laboriosam magni officia omnis,
+                        qui quis recusandae soluta temporibus ut voluptas! Voluptas!</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, blanditiis commodi consequatur, doloremque est harum incidunt ipsum laboriosam magni officia omnis,
+                        qui quis recusandae soluta temporibus ut voluptas! Voluptas!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card card-body">
+                    <h3 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, blanditiis commodi consequatur, doloremque est harum incidunt ipsum laboriosam magni officia omnis,
+                        qui quis recusandae soluta temporibus ut voluptas! Voluptas!</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, blanditiis commodi consequatur, doloremque est harum incidunt ipsum laboriosam magni officia omnis,
+                        qui quis recusandae soluta temporibus ut voluptas! Voluptas!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{--course item section--}}
     <section class="py-5">
         <div class="container">
             <div class="row g-4">
@@ -36,7 +70,7 @@
                                         <li>Course Feature Four</li>
                                     </ul>
                                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    <a href="" class="btn btn-info text-white">Read More</a>
+                                    <a href="{{route('detail')}}" class="btn btn-info text-white">Read More</a>
                                     <a href="" class="btn btn-success float-end">Apply Now</a>
                                 </div>
                             </div>
@@ -70,7 +104,7 @@
                                         <li>Course Feature Four</li>
                                     </ul>
                                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    <a href="" class="btn btn-info text-white">Read More</a>
+                                    <a href="{{route('detail')}}" class="btn btn-info text-white">Read More</a>
                                     <a href="" class="btn btn-success float-end">Apply Now</a>
                                 </div>
                             </div>
@@ -104,7 +138,7 @@
                                         <li>Course Feature Four</li>
                                     </ul>
                                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    <a href="" class="btn btn-info text-white">Read More</a>
+                                    <a href="{{route('detail')}}" class="btn btn-info text-white">Read More</a>
                                     <a href="" class="btn btn-success float-end">Apply Now</a>
                                 </div>
                             </div>
@@ -138,7 +172,7 @@
                                         <li>Course Feature Four</li>
                                     </ul>
                                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    <a href="" class="btn btn-info text-white">Read More</a>
+                                    <a href="{{route('detail')}}" class="btn btn-info text-white">Read More</a>
                                     <a href="" class="btn btn-success float-end">Apply Now</a>
                                 </div>
                             </div>
@@ -150,6 +184,7 @@
         </div>
     </section>
 
+{{--subscriber section--}}
     <section class="py-5 bg-secondary">
         <div class="container">
             <div class="row">
