@@ -19,3 +19,13 @@ Route::get('/', [WebController::class, 'index'])->name('home');
 Route::get('/detail', [WebController::class, 'detail'])->name('detail');
 Route::get('/user-login', [AuthController::class, 'login'])->name('user-login');
 Route::get('/user-register', [AuthController::class, 'register'])->name('user-register');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
