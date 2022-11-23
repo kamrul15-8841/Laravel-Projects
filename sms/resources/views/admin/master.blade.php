@@ -6,12 +6,13 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | Skote - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
 
    @include('admin.includes.header')
+    @yield('header')
 
 </head>
 
@@ -85,8 +86,7 @@
 <div class="rightbar-overlay"></div>
 
 @include('admin.includes.footer')
+
 </body>
-
-
 <!-- Mirrored from themesbrand.com/skote/layouts/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:07:20 GMT -->
 </html>

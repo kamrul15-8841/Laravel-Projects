@@ -21,7 +21,9 @@ Route::get('/detail', [WebController::class, 'detail'])->name('detail');
 Route::get('/user-login', [AuthController::class, 'login'])->name('user-login');
 Route::get('/user-register', [AuthController::class, 'register'])->name('user-register');
 
-Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('auth:sanctum', 'verified');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/add/user', [AdminController::class, 'newUser'])->name('add.user');
+Route::middleware(['auth:sanctum', 'verified'])->get('/add/manage', [AdminController::class, 'manageUser'])->name('manage.user');
 
 //Route::middleware([
 //    'auth:sanctum',
