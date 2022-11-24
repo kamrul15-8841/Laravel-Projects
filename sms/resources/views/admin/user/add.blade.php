@@ -9,54 +9,49 @@
 @endsection
 
 @section('body')
-<h1>hel</h1>
-{{--    <section class="py-5 my-5">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <div class="card">--}}
-{{--                        <div class="card-body">--}}
-{{--                            <h4 class="card-title mb-4">Horizontal form layout</h4>--}}
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4 text-center">Add User</h4>
+                            <h5 class="text-center text-info">{{Session::get('message')}}</h5>
+                            <form action="{{route('new.user')}}" method="POST">
+                                @csrf
+                                <div class="form-group row mb-4">
+                                    <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Full name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="full_name" name="name">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label for="horizontal-email-input" class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="email" name="email">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label for="horizontal-password-input" class="col-sm-3 col-form-label">Password</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" class="form-control" id="password" name="password">
+                                    </div>
+                                </div>
 
-{{--                            <form>--}}
-{{--                                <div class="form-group row mb-4">--}}
-{{--                                    <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">First name</label>--}}
-{{--                                    <div class="col-sm-9">--}}
-{{--                                        <input type="text" class="form-control" id="horizontal-firstname-input">--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="form-group row mb-4">--}}
-{{--                                    <label for="horizontal-email-input" class="col-sm-3 col-form-label">Email</label>--}}
-{{--                                    <div class="col-sm-9">--}}
-{{--                                        <input type="email" class="form-control" id="horizontal-email-input">--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="form-group row mb-4">--}}
-{{--                                    <label for="horizontal-password-input" class="col-sm-3 col-form-label">Password</label>--}}
-{{--                                    <div class="col-sm-9">--}}
-{{--                                        <input type="password" class="form-control" id="horizontal-password-input">--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                                <div class="form-group row justify-content-end">--}}
-{{--                                    <div class="col-sm-9">--}}
-{{--                                        <div class="custom-control custom-checkbox mb-4">--}}
-{{--                                            <input type="checkbox" class="custom-control-input" id="horizontal-customCheck">--}}
-{{--                                            <label class="custom-control-label" for="horizontal-customCheck">Remember me</label>--}}
-{{--                                        </div>--}}
-
-{{--                                        <div>--}}
-{{--                                            <button type="submit" class="btn btn-primary w-md">Submit</button>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+                                <div class="form-group row justify-content-end">
+                                    <div class="col-sm-9">
+                                        <div>
+                                                <button type="submit" class="btn btn-primary w-md">Create New User</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 

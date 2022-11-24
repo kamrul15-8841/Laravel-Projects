@@ -26,13 +26,15 @@
 
 <!-- ========== Left Sidebar Start ========== -->
 @include('admin.includes.sidebar')
-
+    <div class="main-content">
+        <div class="page-content">
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
-    @yield('body')
     <!-- end main content-->
-
+            @yield('body')
+        </div>
+    </div>
 </div>
 <!-- END layout-wrapper -->
 

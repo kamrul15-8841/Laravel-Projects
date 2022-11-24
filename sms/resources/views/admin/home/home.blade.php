@@ -8,9 +8,7 @@
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
-    <div class="main-content">
-
-        <div class="page-content">
+{{--    <div class="main-content">--}}
             <div class="container-fluid">
 
                 <!-- start page title -->
@@ -579,7 +577,7 @@
                 <!-- end row -->
             </div>
             <!-- container-fluid -->
-        </div>
+
         <!-- End Page-content -->
 
         <!-- Modal -->
@@ -674,17 +672,17 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script> © Skote.
+                        <script>document.write(new Date().getFullYear())</script> © Kamrul.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-right d-none d-sm-block">
-                            Design & Develop by Themesbrand
+                            Design & Develop by Kamrul
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-    </div>
+{{--    </div>--}}
     <!-- end main content-->
 @endsection
 

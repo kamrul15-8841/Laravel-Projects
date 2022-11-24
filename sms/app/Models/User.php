@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
@@ -23,6 +24,7 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    public static $user, $users;
     protected $fillable = [
         'name',
         'email',
@@ -58,4 +60,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public static function newUser($request)
+    {
+        self::$user = new User();
+        self::$user->name = $request->name;
+        self::$user->email = $request->email;
+        self::$user->password = bcrypt($request->password);
+        self::$user->save();
+    }
 }
