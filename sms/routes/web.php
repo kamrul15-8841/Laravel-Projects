@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\admin\AdminController;
-
+use App\Http\Controllers\TeacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +22,16 @@ Route::get('/user-login', [AuthController::class, 'login'])->name('user-login');
 Route::get('/user-register', [AuthController::class, 'register'])->name('user-register');
 
 Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware(['auth:sanctum', 'verified']);
-Route::get('/add/user', [AdminController::class, 'addUser'])->name('add.user')->middleware(['auth:sanctum', 'verified']);
-Route::post('/new/user', [AdminController::class, 'create'])->name('new.user')->middleware(['auth:sanctum', 'verified']);
-Route::get('/manage/user', [AdminController::class, 'manageUser'])->name('manage.user')->middleware(['auth:sanctum', 'verified']);
+Route::get('/add/user', [AdminController::class, 'addUser'])->name('add.user')->middleware(['auth:sanctum', 'verified', 'superAdmin']);
+Route::post('/new/user', [AdminController::class, 'create'])->name('new.user')->middleware(['auth:sanctum', 'verified', 'superAdmin']);
+Route::get('/manage/user', [AdminController::class, 'manageUser'])->name('manage.user')->middleware(['auth:sanctum', 'verified', 'superAdmin']);
+Route::get('/edit/user/{id}', [AdminController::class, 'editUser'])->name('edit.user')->middleware(['auth:sanctum', 'verified', 'superAdmin']);
+Route::post('/update/user/{id}', [AdminController::class, 'updateUser'])->name('update.user')->middleware(['auth:sanctum', 'verified', 'superAdmin']);
+Route::post('/delete/user/{id}', [AdminController::class, 'deleteUser'])->name('delete.user')->middleware(['auth:sanctum', 'verified', 'superAdmin']);
+
+Route::get('/add/teacher', [TeacherController::class, 'addTeacher'])->name('add.teacher')->middleware(['auth:sanctum', 'verified']);
+Route::get('/manage/teacher', [TeacherController::class, 'manageTeacher'])->name('manage.teacher')->middleware(['auth:sanctum', 'verified']);
+Route::post('/new/teacher', [TeacherController::class, 'create'])->name('new.teacher')->middleware(['auth:sanctum', 'verified']);
 
 //Route::middleware([
 //    'auth:sanctum',
