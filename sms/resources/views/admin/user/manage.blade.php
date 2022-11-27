@@ -36,7 +36,7 @@
                                         <td>
                                             <a href="{{route('edit.user', ['id' => $user->id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
 {{--                                            <a href="{{route('delete.user', ['id' => $user->id])}}" class="btn btn-danger btn-sm {{$user->id == 1 ? 'disabled' : '' }}" onclick="return confirm('Are You sure want to delete this ?')"><i class="fa fa-trash "></i>--}}
-                                            <a href="" class="btn btn-danger btn-sm {{$user->id == 1 ? 'disabled' : '' }}" onclick="event.preventDefault(); document.getElementById('deleteUser{{$user->id}}').submit();"><i class="fa fa-trash "></i></a>
+                                            <a href="" class="btn btn-danger btn-sm {{$user->id == 11 ? 'disabled' : '' }}" onclick="event.preventDefault(); document.getElementById('deleteUser{{$user->id}}').submit();"><i class="fa fa-trash "></i></a>
                                             <form action="{{route('delete.user', ['id' => $user->id])}}" method="POST" id="deleteUser{{$user->id}}">
                                                 @csrf
                                             </form>

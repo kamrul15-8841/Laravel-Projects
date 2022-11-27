@@ -23,26 +23,35 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Full Name</th>
+                                        <th>Code</th>
                                         <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>Address</th>
+                                        <th>Image</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-{{--                                    @foreach($users as $user)--}}
-{{--                                        <tr>--}}
-{{--                                            <th scope="row">{{$loop->iteration}}</th>--}}
-{{--                                            <td>{{$user->name}}</td>--}}
-{{--                                            <td>{{$user->email}}</td>--}}
-{{--                                            <td>--}}
-{{--                                                <a href="{{route('edit.user', ['id' => $user->id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>--}}
-{{--                                                --}}{{--                                            <a href="{{route('delete.user', ['id' => $user->id])}}" class="btn btn-danger btn-sm {{$user->id == 1 ? 'disabled' : '' }}" onclick="return confirm('Are You sure want to delete this ?')"><i class="fa fa-trash "></i>--}}
-{{--                                                <a href="" class="btn btn-danger btn-sm {{$user->id == 1 ? 'disabled' : '' }}" onclick="event.preventDefault(); document.getElementById('deleteUser{{$user->id}}').submit();"><i class="fa fa-trash "></i></a>--}}
-{{--                                                <form action="{{route('delete.user', ['id' => $user->id])}}" method="POST" id="deleteUser{{$user->id}}">--}}
-{{--                                                    @csrf--}}
-{{--                                                </form>--}}
-{{--                                            </td>--}}
-{{--                                        </tr>--}}
-{{--                                    @endforeach--}}
+                                    @foreach($teachers as $teacher)
+                                        <tr>
+                                            <td scope="row">{{$loop->iteration}}</td>
+                                            <td>{{$teacher->name}}</td>
+                                            <td>{{$teacher->code}}</td>
+                                            <td>{{$teacher->email}}</td>
+                                            <td>{{$teacher->mobile}}</td>
+                                            <td>{{$teacher->address}}</td>
+                                            <td><img src="{{asset($teacher->image)}}" alt="" height="80" width="80"></td>
+                                            <td>{{$teacher->status = 1 ? 'Active' : 'Inactive'}}</td>
+                                            <td>
+                                                <a href="{{route('edit.teacher', ['id' => $teacher->id])}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                                <a href="" class="btn btn-danger btn-sm}" onclick="event.preventDefault(); document.getElementById('deleteUser{{$teacher->id}}').submit();"><i class="fa fa-trash "></i></a>
+                                                <form action="{{route('delete.teacher', ['id' => $teacher->id])}}" method="POST" id="deleteUser{{$teacher->id}}">
+                                                    @csrf
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

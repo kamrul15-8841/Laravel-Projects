@@ -18,7 +18,7 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->id == 1)
+        if (Auth::user()->id == 11)
         {
             return $next($request);
         }

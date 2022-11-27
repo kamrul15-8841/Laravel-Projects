@@ -40,7 +40,7 @@ class AdminController extends Controller
     }
     public function updateUser(Request $request, $id)
     {
-        User::updateUser($request,$id);
+        User::updateUser($request, $id);
         return redirect('/manage/user')->with('message', 'User info Update Successfully');
     }
 
