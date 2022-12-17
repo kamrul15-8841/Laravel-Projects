@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,7 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.product.index', [
+            'products' => Product::all(),
+        ]);
     }
 
     /**
@@ -23,7 +28,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.product.create', [
+           'products' => Product::all(),
+           'categories' => Category::where('status',1)->get(),
+           'brands' => Brand::where('status',1)->get(),
+            ]);
     }
 
     /**
@@ -34,7 +43,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::createOrUpdateProduct($request);
+        return redirect()->route('products.index')->with('message', 'product Created Successfully');
     }
 
     /**
@@ -56,7 +66,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.product.edit', [
+            'product' => Brand::find($id),
+            'categories' => Category::where('status',1)->get(),
+            'brands' => Brand::where('status',1)->get(),
+        ]);
     }
 
     /**
@@ -68,7 +82,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Product::createOrUpdateProduct($request,$id);
+        return redirect()->route('products.index')->with('message', 'product Update Successfully');
     }
 
     /**
@@ -79,6 +94,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::find($id)->delete();
+        return redirect()->route('products.index')->with('message', 'product Delete Successfully');
     }
 }

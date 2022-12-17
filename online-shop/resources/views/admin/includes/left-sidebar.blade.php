@@ -15,8 +15,8 @@
                         <span>Category</span>
                     </a>
                     <ul class="dropdown-menu" aria-expanded="false">
-                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="{{ route('categories.index') }}">Category</a></li>
-                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="layouts-light-sidebar.html">Manage Category</a></li>
+                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="{{ route('categories.create') }}">Add Category</a></li>
+                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="{{ route('categories.index') }}">Manage Category</a></li>
                     </ul>
                 </li>
 
@@ -26,8 +26,8 @@
                         <span>Brand</span>
                     </a>
                     <ul class="dropdown-menu" aria-expanded="false">
-                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="layouts-horizontal.html">Brand</a></li>
-                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="layouts-light-sidebar.html">Manage Brand</a></li>
+                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="{{ route('brands.create') }}">Add Brand</a></li>
+                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="{{ route('brands.index') }}">Manage Brand</a></li>
                     </ul>
                 </li>
 
@@ -37,8 +37,8 @@
                         <span>Product</span>
                     </a>
                     <ul class="dropdown-menu" aria-expanded="false">
-                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="layouts-horizontal.html">Product</a></li>
-                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="layouts-light-sidebar.html">Manage Product</a></li>
+                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="{{ route('products.create') }}">Product</a></li>
+                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="{{ route('products.index') }}">Manage Product</a></li>
                     </ul>
                 </li>
 

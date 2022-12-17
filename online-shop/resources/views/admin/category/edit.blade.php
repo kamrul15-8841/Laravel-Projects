@@ -14,8 +14,9 @@
                 <div class="card-body">
                     {{--                    <h3 class="text-center text-info">{{Session::get('message')}}</h3>--}}
                     <h3 class="text-center text-info">{{Session::has('message') ? Session::get('message') : ''}}</h3>
-                    <form method="POST" action="{{route('categories.store')}}">
+                    <form method="POST" action="{{route('categories.update', $categories->id)}}">
                         @csrf
+                        @method('put')
                         <div class="row mt-3">
                             <label for="" class="col-md-4">Category Name</label>
                             <div class="col-md-8">

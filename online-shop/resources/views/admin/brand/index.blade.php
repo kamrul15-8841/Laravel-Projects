@@ -1,7 +1,7 @@
 @extends('admin.dashboard.master')
 
 @section('title')
-    Manage Category
+    Manage Brand
 @endsection
 
 @section('body')
@@ -9,9 +9,9 @@
         <div class="col-md-12 mx-auto">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="float-start">Manage Category</h3>
+                    <h3 class="float-start">Manage Brand</h3>
                     <span>
-                        <a href="{{route('categories.create')}}" class="btn btn-info float-end">Create</a>
+                        <a href="{{route('brands.create')}}" class="btn btn-info float-end">Create</a>
                     </span>
                 </div>
                 <div class="card-body">
@@ -20,24 +20,24 @@
                         <thead>
                         <tr>
                             <th>SI NO</th>
-                            <th>Category Name</th>
-                            <th>Category Status</th>
+                            <th>Brand Name</th>
+                            <th>Brand Status</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($categories as $category)
+                        @foreach($brands as $brand)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$category->name}}</td>
-                                <td>{{$category->status == 1 ? 'Published' : 'Unpublished'}}</td>
+                                <td>{{$brand->name}}</td>
+                                <td>{{$brand->status == 1 ? 'Published' : 'Unpublished'}}</td>
                                 <td>
                                     {{--                                    <a href="{{route('course-categories.edit', ['course_category' => $courseCategory->id])}}" class="btn btn-sm btn-outline-warning">--}}
-                                    <a href="{{route('categories.edit', $category->id)}}" class="btn btn-sm btn-outline-warning">
+                                    <a href="{{route('brands.edit', $brand->id)}}" class="btn btn-sm btn-outline-warning">
                                         <i class="fa fa-edit"></i>
                                     </a>
 
-                                    <form action="{{route('categories.destroy', $category->id)}}" method="post" style="display: inline-block">
+                                    <form action="{{route('brands.destroy', $brand->id)}}" method="post" style="display: inline-block">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-sm btn-outline-danger "  onclick="return confirm('Are you sure you want to delete this');">
