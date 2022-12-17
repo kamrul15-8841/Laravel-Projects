@@ -16,6 +16,7 @@ use App\Http\Controllers\FrontController;
 */
 
 Route::get('/',[FrontController::class,'index'])->name('home');
+Route::get('/detail',[FrontController::class,'detail'])->name('detail');
 
 Route::middleware([
     'auth:sanctum',
@@ -26,4 +27,7 @@ Route::middleware([
 //        return view('dashboard');
 //    })->name('dashboard');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::resource('categories',\App\Http\Controllers\CategoryController::class);
+    Route::resource('brands', \App\Http\Controllers\BrandController::class);
+    Route::resource('products', \App\Http\Controllers\ProductController::class);
 });

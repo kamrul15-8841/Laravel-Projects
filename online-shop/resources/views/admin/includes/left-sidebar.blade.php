@@ -15,7 +15,7 @@
                         <span>Category</span>
                     </a>
                     <ul class="dropdown-menu" aria-expanded="false">
-                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="layouts-horizontal.html">Category</a></li>
+                        <li><a class="dropdown-item text-info h1 font-weight-bold" href="{{ route('categories.index') }}">Category</a></li>
                         <li><a class="dropdown-item text-info h1 font-weight-bold" href="layouts-light-sidebar.html">Manage Category</a></li>
                     </ul>
                 </li>
