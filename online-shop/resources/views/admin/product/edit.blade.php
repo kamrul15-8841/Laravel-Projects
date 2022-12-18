@@ -59,14 +59,14 @@
                         <div class="row mt-3">
                             <label for="" class="col-md-4">Product Price</label>
                             <div class="col-md-8">
-                                <input type="number" name="price" value="{{ $product->price }}" class="form-control">
+                                <input type="number" name="price" value="{{$product->price}}" class="form-control">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <label for="" class="col-md-4">Product Description</label>
                             <div class="col-md-8">
                                 <textarea name="description" id="description" rows="5" cols="30" class="form-control">
-                                    {{ $product->description }}
+                                    {!! $product->description !!}
                                 </textarea>
                                 {{--                                <input type="text" name="name" class="form-control">--}}
                             </div>
@@ -75,6 +75,7 @@
                             <label for="" class="col-md-4">Product Image</label>
                             <div class="col-md-8">
                                 <input type="file" name="image" class="form-control">
+                                <img src="{{asset('/').$product->image}}" alt="image" height="100" width="100">
                             </div>
                         </div>
                         <div class="row mt-3">

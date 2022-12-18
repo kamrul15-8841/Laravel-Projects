@@ -40,7 +40,7 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
                         <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="{{ route('detail') }}" class="nav-item nav-link">Product Detail</a>
+                        <a href="" class="nav-item nav-link">Product Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">

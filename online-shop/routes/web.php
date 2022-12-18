@@ -16,7 +16,7 @@ use App\Http\Controllers\FrontController;
 */
 
 Route::get('/',[FrontController::class,'index'])->name('home');
-Route::get('/detail',[FrontController::class,'detail'])->name('detail');
+Route::get('/detail/{id}',[FrontController::class,'detail'])->name('detail');
 
 Route::middleware([
     'auth:sanctum',
