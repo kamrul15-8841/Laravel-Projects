@@ -8,14 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 
-    private static $product, $image, $imageUrl, $directory, $imageName;
+    private static $product, $image, $imageUrl, $directory, $imageName, $exceptions;
     use HasFactory;
     protected $fillable = ['category_id', 'brand_id', 'name', 'price', 'image', 'description', 'status'];
 
     public static function uploadImage($request)
     {
         self::$image     = $request->file('image');
-        self::$imageName = self::$image->getClientOriginalName(); //get image name with extension
+//        self::$imageName = self::$image->getClientOriginalName(); //get image name with extension
+
+        self::$exceptions = self::$image->getClientOriginalExtension(); 
+        self::$imageName = time().'.'.self::$exceptions; //get image name with extension
+
         self::$directory = 'admin/assets/images/uploaded-files/'; //create directory
         self::$image->move(self::$directory, self::$imageName); //move to project folder
         return self::$directory.self::$imageName; //product-images/image.jpg
