@@ -16,11 +16,12 @@ use App\Http\Controllers\TestController;
 */
 
 //for json response
-//Route::get('/', [TestController::class, 'name']);
+Route::get('/', [TestController::class, 'name']);
+Route::get('/users', [TestController::class, 'users']);
 
-//for response redirect
-Route::get('/first', [TestController::class, 'first']);
-Route::get('/second', [TestController::class, 'second']);
+////for response redirect
+//Route::get('/first', [TestController::class, 'first']);
+//Route::get('/second', [TestController::class, 'second']);
 
 
 

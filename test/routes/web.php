@@ -15,10 +15,10 @@ use function Symfony\Component\Finder\name;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('users', UserController::class);
 
-//Route::resource('users', [UserController::class]);
 
-Route::get('/', [UserController::class, 'index']);
+Route::get('/', [UserController::class, 'home'])->name('home');
 
 //Route::get('/', function () {
 //    return view('welcome');

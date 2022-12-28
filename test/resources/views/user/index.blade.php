@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('master')
 
 @section('title')
     Manage User
@@ -14,11 +14,11 @@
                         <a href="{{route('users.create')}}" class="btn btn-info float-end">Create</a>
                     </span>
                 </div>
-{{--                <div class="card-body table-responsive">--}}
+                <div class="card-body table-responsive">
                 <div class="card-body">
-{{--                    <h3 class="text-center text-info">{{Session::has('message') ? Session::get('message') : ''}}</h3>--}}
-{{--                    <table class="table table-hover table-bordered " id="basic-datatable">--}}
-{{--                    <table class="table table-hover table-bordered " id="courseTable">--}}
+                    <h3 class="text-center text-info">{{Session::has('message') ? Session::get('message') : ''}}</h3>
+                    <table class="table table-hover table-bordered " id="basic-datatable">
+                    <table class="table table-hover table-bordered " id="courseTable">
                         <table id="courseTable" class="table table-hover table-striped w-100 nowrap">
                         <thead>
                         <tr>
@@ -33,24 +33,27 @@
                         @foreach($users as $user)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$course->first_name}}</td>
-                                <td>{{$course->last_name}}</td>
-                                <td>{{$course->email}}</td>
+                                <td>{{$user->first_name}}</td>
+                                <td>{{$user->last_name}}</td>
+                                <td>{{$user->email}}</td>
                                 <td>
 
-                                     <a href="{{ route('users.show', $course->id) }}" class="btn btn-sm btn-primary" title="Course Detail">
-                                        <i class="uil-bars"></i>
-                                     </a>
+{{--                                     <a href="{{ route('users.show', $user->uuid) }}" class="btn btn-sm btn-primary" title="Course Detail">--}}
+{{--                                        <i class="fa fa-bar-chart"></i>--}}
+{{--                                         Details--}}
+{{--                                     </a>--}}
 
-                                    <a href="{{ route('users.edit', $course->id) }}" class="btn btn-sm btn-warning" title="Edit Course">
-                                        <i class="uil-edit"></i>
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-md btn-warning" title="Edit Course" style="display: inline-block">
+{{--                                        <i class="fa fa-edit"></i>--}}
+                                        Edit
                                     </a>
 
-                                    <form action="{{ route('users.destroy', $course->id) }}" method="post" style="display: inline-block">
+                                    <form action="{{ route('users.destroy', $user->id) }}" method="post" style="display: inline-block">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-sm btn-danger "  onclick="return confirm('Are you sure you want to delete this');" title="Delete Course">
-                                            <i class="uil-trash"></i>
+{{--                                            <i class="fa fa-trash"></i>--}}
+                                            Delete
                                         </button>
                                     </form>
                                 </td>

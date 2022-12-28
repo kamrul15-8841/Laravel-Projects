@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class UserController extends Controller
 {
+
+    public function home()
+    {
+        return view('home.home');
+    }
     /**
      * Display a listing of the resource.
                             *
@@ -14,8 +20,9 @@ class UserController extends Controller
      */
     public function index()
     {
+//        return User::all();
         return view('user.index', [
-//            'users' => User::latest()->get(),
+            'users' => User::latest()->get(),
         ]);
     }
 
@@ -39,8 +46,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        CourseSubCategory::createOrUpdateCourseSubCategory($request);
-        return redirect()->route('users.index')->with('message', 'Course Sub Category Created Successfully');
+        User::createOrUpdateCourseUser($request);
+        return redirect()->route('users.index')->with('message', 'User Created Successfully');
     }
 
     /**
@@ -62,9 +69,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+//        return User::find($id);
         return view('user.edit', [
-            'courseSubCategory' => CourseSubCategory::find($id),
-            'courseCategories' => CourseCategory::where('status', 1)->get()
+            'users' => User::find($id),
+//            'courseCategories' => CourseCategory::where('status', 1)->get()
         ]);
     }
 
@@ -78,7 +86,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         User::createOrUpdateCourseUser($request, $id);
-        return redirect()->route('users.index')->with('message', 'Course Sub Category updated successfully.');
+        return redirect()->route('users.index')->with('message', 'User updated successfully.');
     }
 
     /**
@@ -89,8 +97,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        CourseSubCategory::find($id)->delete();
-        return redirect()->route('users.index')->with('message', 'Course Sub Category Delete Successfully');
+        User::find($id)->delete();
+        return redirect()->route('users.index')->with('message', 'User Delete Successfully');
     }
 
 }

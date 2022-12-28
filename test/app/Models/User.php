@@ -11,11 +11,12 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+//    protected $fillable = ['first_name', 'last_name','email', 'password'];
 
     public static function createOrUpdateCourseUser($request, $id = null)
     {
         User::updateOrCreate(['id'=> $id], [
+//            'uuid' => $request->uuid,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
@@ -29,6 +30,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
 //        'name',
+//        'uuid',
+        'first_name',
+        'last_name',
         'email',
         'password',
     ];
