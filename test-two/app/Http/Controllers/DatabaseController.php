@@ -15,7 +15,8 @@ class DatabaseController extends Controller
         $dbName = DB::Connection()->select("SELECT * FROM results WHERE subject='English' ORDER BY mark DESC limit 2,3");
 //        $dbName = DB::Connection()->select("select * from results where mark in (select mark from results group by mark order by mark desc limit 2,1)");
         return $dbName;
-//        $dbName = DB::Connection()->select("SELECT * FROM details");
+//        $dbName = DB::Connection()->se
+//lect("SELECT * FROM details");
 //        return $dbName;
     }
 }
